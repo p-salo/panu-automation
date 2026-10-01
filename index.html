@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panu Automation</title>
+<meta name="description" content="Panu Automation - sovellukset ja niiden tietosuojakäytännöt.">
+<style>
+  :root {
+    --brand: #0072B2;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5a6470;
+    --line: #e2e6ea;
+    --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #e8eaed;
+      --muted: #9aa4b0;
+      --line: #2a2f37;
+      --card: #1b1f25;
+      --brand: #4da3dd;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 0 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 64px 0 96px; }
+  .mark { width: 64px; height: 64px; display: block; margin-bottom: 24px; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .lede { color: var(--muted); margin: 0 0 40px; }
+  h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.08em;
+       color: var(--muted); margin: 48px 0 16px; font-weight: 600; }
+  a { color: var(--brand); }
+  .app {
+    display: block; padding: 20px 22px; border: 1px solid var(--line);
+    border-radius: 14px; background: var(--card); text-decoration: none; color: inherit;
+  }
+  .app:hover { border-color: var(--brand); }
+  .app strong { display: block; font-size: 1.15rem; margin-bottom: 4px; }
+  .app span { color: var(--muted); font-size: 0.95rem; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line);
+           color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" viewBox="0 0 48 48" aria-label="Panu Automation" role="img">
+    <rect width="48" height="48" rx="11" fill="#0072B2"/>
+    <g fill="none" stroke="#fff" stroke-width="6.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.6 14.6 L14.6 24 L33.4 24 L33.4 33.4"/>
+    </g>
+    <circle cx="14.6" cy="14.6" r="4.8" fill="#fff"/>
+    <circle cx="33.4" cy="33.4" r="4.8" fill="#fff"/>
+  </svg>
+
+  <h1>Panu Automation</h1>
+  <p class="lede">Sovellukset ja niiden tietosuojakäytännöt.<br>
+  <span lang="en">Apps, and their privacy policies.</span></p>
+
+  <h2>Sovellukset</h2>
+  <a class="app" href="brainsnacks/privacy/">
+    <strong>Brain Snacks</strong>
+    <span>Kahdeksan pulmapeliä yhden etenemisen alla. Tietosuojakäytäntö →</span>
+  </a>
+
+  <footer>
+    Panu Automation ·
+    <a href="mailto:brainsnacks@panu-automation.com">brainsnacks@panu-automation.com</a>
+  </footer>
+</main>
+</body>
+</html>
