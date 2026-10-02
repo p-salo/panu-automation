@@ -3,11 +3,16 @@
 The public site for Panu Automation's apps: the privacy policies Google Play requires to be reachable at
 a public URL, and nothing else.
 
-Published with GitHub Pages from the `main` branch:
+Published with GitHub Pages from the `main` branch, on the domain's own subdomain:
 
-- <https://p-salo.github.io/panu-automation/> — index
-- <https://p-salo.github.io/panu-automation/brainsnacks/privacy/> — **Brain Snacks privacy policy**,
-  which is the URL in the Play Console listing
+- <https://privacy.panu-automation.com/> — index
+- <https://privacy.panu-automation.com/brainsnacks/> — **Brain Snacks privacy policy**, which is the URL
+  in the Play Console listing
+
+`privacy.` is a subdomain on purpose. The apex and `www` serve the company's own WordPress site from
+DreamHost, and pointing either of those at GitHub Pages would take that site down. A subdomain is one
+DNS record that cannot affect anything already there, and the domain's mail (MX, through MailChannels)
+is untouched by it.
 
 ## What is deliberately not here
 
