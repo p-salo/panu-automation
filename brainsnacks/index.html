@@ -67,7 +67,7 @@
   <h1>Brain Snacks</h1>
   <p class="sub">Tietosuojakäytäntö · <span lang="en">Privacy policy</span></p>
   <p class="meta">
-    Panu Automation · Päivitetty / Last updated: 1.10.2026 · Koskee versiota / Applies to version: 1.0.0
+    Panu Automation · Päivitetty / Last updated: 2.10.2026 · Koskee versiota / Applies to version: 1.0.0
   </p>
 
   <div class="key">
@@ -93,7 +93,7 @@
   <ul>
     <li>ei kerää eikä lähetä henkilötietoja</li>
     <li>ei käytä analytiikkaa eikä seurantaa</li>
-    <li>ei näytä mainoksia</li>
+    <li>ei näytä mainoksia julkaistussa versiossa (testiversiosta ks. alla)</li>
     <li>ei sisällä ostoksia</li>
     <li>ei jaa mitään kolmansille osapuolille, koska jaettavaa ei ole</li>
   </ul>
@@ -103,10 +103,31 @@
   puhelinta. Sitä käytetään pelkästään siihen että lauta vastaa sormen alla, ja sen voi kytkeä pois:
   <strong>Asetukset → Värinä</strong>. Se on Androidin luokittelussa tavallinen käyttöoikeus, joten sitä
   ei erikseen kysytä.</p>
-  <p>Mitään muuta ei pyydetä. Erityisesti <strong>sovelluksella ei ole verkkokäyttöoikeutta lainkaan</strong>:
-  julkaistu versio ei pyydä <code>INTERNET</code>-oikeutta, joten se ei voi lähettää mitään mihinkään edes
-  jos haluaisi. Tämän voi tarkistaa itse Play-kaupan sovellussivulta kohdasta
+  <p>Lisäksi sovelluksessa on Googlen mainos-SDK, ja se tuo mukanaan omat käyttöoikeutensa riippumatta
+  siitä näyttääkö kyseinen versio mainoksia:</p>
+  <pre>INTERNET, ACCESS_NETWORK_STATE, com.google.android.gms.permission.AD_ID,
+ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
+WAKE_LOCK, FOREGROUND_SERVICE</pre>
+  <p>Tällä sivulla luki aiemmin, ettei sovellus pyydä verkko-oikeutta lainkaan. Se piti paikkansa siihen
+  asti kun mainos-SDK lisättiin, eikä pidä enää, ja siksi se on kirjoitettu tähän näin suoraan.
+  Käyttöoikeudet voi tarkistaa itse Play-kaupan sovellussivulta kohdasta
   &rdquo;Sovelluksen käyttöoikeudet&rdquo;.</p>
+
+  <h3>Testiversio ja mainokset</h3>
+  <p>Sovelluksesta on kaksi versiota, ja ne käyttäytyvät eri tavalla:</p>
+  <ul>
+    <li><strong>Julkaistu versio ei näytä mainoksia.</strong> Mainos-SDK on paketissa, mutta sitä ei
+    käynnistetä, se ei pyydä yhtään mainosta eikä se lue mainostunnistetta.</li>
+    <li><strong>Testiversiossa</strong> (Play Consolen testiraide) mainokset ovat päällä ja ne ovat
+    <strong>Googlen testimainoksia</strong>, merkittyinä ruudulla tekstillä &rdquo;Testimainos&rdquo;. Ne
+    eivät tuota tuloja kenellekään, mutta ne ovat oikeita mainospyyntöjä: SDK ottaa yhteyden Googlen
+    mainosverkkoon ja voi lukea laitteen mainostunnisteen.</li>
+  </ul>
+  <p>Ennen ensimmäistä mainospyyntöä EU- ja ETA-alueella sekä Isossa-Britanniassa sovellus näyttää Googlen
+  suostumuslomakkeen (UMP). Valinta tallennetaan laitteelle, ja jos et anna suostumusta, mainoksia voidaan
+  yhä näyttää, mutta ei personoituina.</p>
+  <p>Mainos näytetään vain silloin kun pelaaja itse valitsee katsoa yhden saadakseen jotain. Peli ei
+  koskaan keskeytä pulmaa mainoksella, eikä mikään mainos ole ainoa tapa edetä.</p>
 
   <h3>Lapset</h3>
   <p>Sovellus on tarkoitettu 13 vuotta täyttäneille. Koska se ei kerää mitään tietoja keneltäkään, se ei
@@ -148,7 +169,7 @@
     <ul>
       <li>does not collect or transmit personal data</li>
       <li>uses no analytics and no tracking</li>
-      <li>shows no advertising</li>
+      <li>shows no advertising in the published build (see below for test builds)</li>
       <li>contains no in-app purchases</li>
       <li>shares nothing with third parties, because there is nothing to share</li>
     </ul>
@@ -158,10 +179,31 @@
     used for nothing but making the board answer under your finger, and you can turn it off:
     <strong>Settings → Vibration</strong>. Android classes it as a normal permission, so you are not asked
     for it separately.</p>
-    <p>Nothing else is requested. In particular, <strong>the app has no network access at all</strong>: the
-    published build does not request the <code>INTERNET</code> permission, so it could not send anything
-    anywhere even if it wanted to. You can check this yourself on the app&rsquo;s Play Store page under
+    <p>Beyond that, the app includes Google&rsquo;s advertising SDK, and the SDK adds its own permissions
+    whether or not a given build shows any ads:</p>
+    <pre>INTERNET, ACCESS_NETWORK_STATE, com.google.android.gms.permission.AD_ID,
+ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
+WAKE_LOCK, FOREGROUND_SERVICE</pre>
+    <p>This page used to say the app requested no network access at all. That was true until the
+    advertising SDK was added and is not true any more, which is why it is written out here rather than
+    quietly dropped. You can check the permissions yourself on the app&rsquo;s Play Store page under
     &ldquo;App permissions&rdquo;.</p>
+
+    <h3>Test builds and ads</h3>
+    <p>There are two builds of this app and they behave differently:</p>
+    <ul>
+      <li><strong>The published build shows no ads.</strong> The SDK is in the package but is never
+      started, never requests an ad and never reads the advertising identifier.</li>
+      <li><strong>The test build</strong> (the Play Console testing track) has ads switched on, and they
+      are <strong>Google&rsquo;s test ads</strong>, labelled &ldquo;Test ad&rdquo; on screen. They earn
+      nobody anything, but they are real ad requests: the SDK contacts Google&rsquo;s ad network and may
+      read the device&rsquo;s advertising identifier.</li>
+    </ul>
+    <p>Before the first ad request in the EU, the EEA and the UK, the app shows Google&rsquo;s consent
+    form (UMP). Your answer is stored on the device, and if you do not consent, ads may still be shown but
+    not personalised.</p>
+    <p>An ad is only ever shown when the player chooses to watch one in exchange for something. The game
+    never interrupts a puzzle with an ad, and no ad is ever the only way forward.</p>
 
     <h3>Children</h3>
     <p>The app is intended for ages 13 and over. Since it collects no data from anyone, it collects none
