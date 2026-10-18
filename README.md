@@ -1,13 +1,16 @@
 # Panu Automation
 
-The public site for Panu Automation's apps: the privacy policies Google Play requires to be reachable at
-a public URL, and nothing else.
+The public site for Panu Automation's apps: the privacy policies and terms of use that the stores and the
+apps themselves link to, and that have to be reachable at a public URL. Nothing else.
 
 Published with GitHub Pages from the `main` branch, on the domain's own subdomain:
 
 - <https://privacy.panu-automation.com/> — index
 - <https://privacy.panu-automation.com/brainsnacks/> — **Brain Snacks privacy policy**, which is the URL
   in the Play Console listing
+- <https://privacy.panu-automation.com/chainworks/> and `/chainworks/terms/` — **Chainworks privacy policy
+  and terms of use**. Both URLs go into the game itself, and its shop stays shut until they answer. The
+  advertising section is added on the day the game's ad SDK is merged, not before.
 
 `privacy.` is a subdomain on purpose. The apex and `www` serve the company's own WordPress site from
 DreamHost, and pointing either of those at GitHub Pages would take that site down. A subdomain is one
