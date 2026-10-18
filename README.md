@@ -11,6 +11,10 @@ Published with GitHub Pages from the `main` branch, on the domain's own subdomai
 - <https://privacy.panu-automation.com/chainworks/> and `/chainworks/terms/` — **Chainworks privacy policy
   and terms of use**. Both URLs go into the game itself, and its shop stays shut until they answer. The
   advertising section is added on the day the game's ad SDK is merged, not before.
+- <https://privacy.panu-automation.com/cra-workspace/> and `/cra-workspace/terms/` — **CRA Workspace for
+  Jira privacy policy and terms of use**, in English, for the Atlassian Marketplace listing. The app's own
+  repository is private, and a private repository's GitHub Pages would cost money, which is why its legal
+  pages live here.
 
 `privacy.` is a subdomain on purpose. The apex and `www` serve the company's own WordPress site from
 DreamHost, and pointing either of those at GitHub Pages would take that site down. A subdomain is one
