@@ -32,9 +32,10 @@ A privacy policy describes **the version of the app a person can install right n
 is planned. So the order is: update the page, publish it, *then* release the build that makes it true -
 and update the Play Console Data safety declaration in the same sitting, because the two have to agree.
 
-Brain Snacks 1.0.0 collects nothing and has no network permission at all. The day advertising or
-purchases are added, both the page and the Data safety form have to be rewritten before that build goes
-out. Both this file and the page itself say so, on purpose.
+Brain Snacks 1.0.0 collects nothing. Its advertising SDK brought network permissions with it, which the
+page says outright, and purchases add the billing permission. The page describing purchases and the
+short ad between levels goes live on the day the first bundle with purchases is uploaded, and the Data
+safety form is checked in the same sitting.
 
 ## Contact
 
