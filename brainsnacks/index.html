@@ -13,6 +13,8 @@
     --muted: #5a6470;
     --line: #e2e6ea;
     --card: #f6f8fa;
+    --todo-bg: #fff3bf;
+    --todo-fg: #5c4400;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -22,6 +24,8 @@
       --line: #2a2f37;
       --card: #1b1f25;
       --brand: #4da3dd;
+      --todo-bg: #4a3b00;
+      --todo-fg: #ffe08a;
     }
   }
   * { box-sizing: border-box; }
@@ -49,12 +53,16 @@
   a { color: var(--brand); }
   code { background: var(--card); border: 1px solid var(--line); border-radius: 5px;
          padding: 1px 5px; font-size: 0.88em; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   .key {
     background: var(--card); border: 1px solid var(--line);
     border-left: 4px solid var(--brand);
     border-radius: 10px; padding: 18px 22px; margin: 0 0 32px;
   }
   .key p { margin: 0; }
+  mark.todo { background: var(--todo-bg); color: var(--todo-fg); border-radius: 4px; padding: 0 4px; }
+  .draft { background: var(--todo-bg); color: var(--todo-fg); border-radius: 10px;
+           padding: 12px 16px; margin: 0 0 32px; font-size: 0.92rem; }
   footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line);
            color: var(--muted); font-size: 0.9rem; }
   [lang="en"] h2:first-of-type { border-top: none; }
@@ -67,14 +75,13 @@
   <h1>Brain Snacks</h1>
   <p class="sub">Tietosuojakäytäntö · <span lang="en">Privacy policy</span></p>
   <p class="meta">
-    Panu Automation · Päivitetty / Last updated: 2.10.2026 · Koskee versiota / Applies to version: 1.0.0
+    Panu Automation · Päivitetty / Last updated: 26.10.2026
+    · Koskee versiota / Applies to version: 1.0.0
   </p>
 
   <div class="key">
-    <p><strong>Brain Snacks ei kerää sinusta mitään.</strong> Sovellus ei lähetä mitään mihinkään, eikä
-    siinä ole käyttäjätiliä, kirjautumista eikä verkkoyhteyttä. Kaikki mitä pelissä teet jää puhelimeesi.</p>
+    <p><strong>Brain Snacks näyttää mainoksia, ja Googlen mainos-SDK kerää niitä varten tietoja</strong> (kohta Mainokset). Peli itse ei lähetä mitään minnekään: edistymisesi pysyy puhelimessasi. Sovelluksessa ei ole käyttäjätiliä eikä kirjautumista.</p>
   </div>
-
   <h2>Mitä sovellus tallentaa</h2>
   <p>Sovellus tallentaa edistymisesi puhelimesi omaan, sovelluskohtaiseen tallennustilaan:</p>
   <ul>
@@ -83,74 +90,66 @@
     <li>vihjelompakon saldo ja ansaitut mitalit, värit ja koristeet</li>
     <li>asetuksesi: kieli, väriteema, äänet, värinä, numerot palloissa</li>
     <li>kesken jäänyt lauta, jotta voit jatkaa siitä mihin jäit</li>
+    <li>ostojesi tilausnumerot, jotta samaa ostoa ei makseta kahdesti</li>
   </ul>
-  <p>Nämä tiedot eivät sisällä nimeä, sähköpostiosoitetta, sijaintia, yhteystietoja eivätkä mitään muuta
-  jolla sinut voisi tunnistaa. Ne ovat lukuja siitä mitä pelissä on tapahtunut.</p>
-  <p>Tiedot sijaitsevat vain laitteellasi. Kun poistat sovelluksen, ne poistuvat sen mukana. Voit myös
-  tyhjentää ne itse milloin tahansa: <strong>Asetukset → Nollaa edistyminen</strong>.</p>
+  <p>Nämä tiedot eivät sisällä nimeä, sähköpostiosoitetta, sijaintia, yhteystietoja eivätkä mitään muuta jolla sinut voisi tunnistaa. Ne ovat lukuja siitä mitä pelissä on tapahtunut.</p>
+  <p>Tiedot sijaitsevat vain laitteellasi. Kun poistat sovelluksen, ne poistuvat sen mukana. Voit myös tyhjentää ne itse milloin tahansa: <strong>Asetukset → Nollaa edistyminen</strong>.</p>
 
-  <h3>Mitä sovellus ei tee</h3>
+  <h3>Mitä peli itse ei tee</h3>
   <ul>
-    <li>ei kerää eikä lähetä henkilötietoja</li>
-    <li>ei käytä analytiikkaa eikä seurantaa</li>
-    <li>ei näytä mainoksia julkaistussa versiossa (testiversiosta ks. alla)</li>
-    <li>ei sisällä ostoksia</li>
-    <li>ei jaa mitään kolmansille osapuolille, koska jaettavaa ei ole</li>
+    <li>ei lähetä edistymistäsi eikä muita pelin tietoja minnekään</li>
+    <li>ei käytä omaa analytiikkaa eikä seurantaa</li>
+    <li>ei kysy nimeä, sähköpostiosoitetta eikä muita yhteystietoja</li>
+    <li>ei myy tietoja kenellekään</li>
   </ul>
+  <p>Mainoksia varten Googlen mainos-SDK kerää ja jakaa Googlelle tietoja, jotka on kerrottu kohdassa Mainokset.</p>
+
+  <h3>Sovelluksen sisäiset ostot</h3>
+  <p>Pelissä voi ostaa vihjepaketteja sekä &ldquo;Ei mainoksia&rdquo; -oston, joka poistaa tasojen väliset mainokset pysyvästi. Ostot käsittelee kokonaan <strong>Google Play</strong>: maksutapa, kortti- ja pankkitiedot ja kuitti ovat Googlen ja sinun välisiä, eikä sovellus näe niistä mitään. Play kertoo sovellukselle vain, mitä tuotetta ostettiin, ja tilausnumeron. Tilausnumero tallennetaan puhelimeesi, jotta samaa ostoa ei makseta kahdesti; sitä ei lähetetä minnekään. Mitään pelissä ei tarvitse ostaa: vihjeet voi aina myös ansaita pelaamalla.</p>
+  <p>Ostot palautetaan Google-tililtäsi, kun asennat pelin uudelleen tai uuteen puhelimeen: <strong>Kauppa → Palauta ostokset</strong>. Palautukset ja hyvitykset hoidetaan Google Playn kautta Googlen ehtojen mukaan.</p>
 
   <h3>Käyttöoikeudet</h3>
-  <p>Sovellus pyytää <strong>yhtä</strong> käyttöoikeutta: <code>VIBRATE</code>, eli oikeuden värisyttää
-  puhelinta. Sitä käytetään pelkästään siihen että lauta vastaa sormen alla, ja sen voi kytkeä pois:
-  <strong>Asetukset → Värinä</strong>. Se on Androidin luokittelussa tavallinen käyttöoikeus, joten sitä
-  ei erikseen kysytä.</p>
-  <p>Lisäksi sovelluksessa on Googlen mainos-SDK, ja se tuo mukanaan omat käyttöoikeutensa riippumatta
-  siitä näyttääkö kyseinen versio mainoksia:</p>
+  <p>Sovellus pyytää <strong>yhtä</strong> käyttöoikeutta: <code>VIBRATE</code>, eli oikeuden värisyttää puhelinta. Sitä käytetään pelkästään siihen että lauta vastaa sormen alla, ja sen voi kytkeä pois: <strong>Asetukset → Värinä</strong>. Se on Androidin luokittelussa tavallinen käyttöoikeus, joten sitä ei erikseen kysytä.</p>
+  <p>Lisäksi sovelluksessa on Googlen mainos-SDK, joka tuo mukanaan omat käyttöoikeutensa:</p>
   <pre>INTERNET, ACCESS_NETWORK_STATE, com.google.android.gms.permission.AD_ID,
 ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
 WAKE_LOCK, FOREGROUND_SERVICE</pre>
-  <p>Tällä sivulla luki aiemmin, ettei sovellus pyydä verkko-oikeutta lainkaan. Se piti paikkansa siihen
-  asti kun mainos-SDK lisättiin, eikä pidä enää, ja siksi se on kirjoitettu tähän näin suoraan.
-  Käyttöoikeudet voi tarkistaa itse Play-kaupan sovellussivulta kohdasta
-  &rdquo;Sovelluksen käyttöoikeudet&rdquo;.</p>
+  <p>Ostoja varten Google Playn maksukirjasto tuo käyttöoikeuden <code>com.android.vending.BILLING</code>, jolla sovellus pyytää Play Kauppaa käsittelemään oston.</p>
+  <p>Tämä sivu sanoi aiemmin, ettei sovellus pyydä verkko-oikeutta lainkaan. Se piti paikkansa siihen asti kun mainos-SDK lisättiin, eikä pidä enää, ja siksi se on kirjoitettu tähän näin suoraan. Käyttöoikeudet voi tarkistaa itse Play-kaupan sovellussivulta kohdasta &ldquo;Sovelluksen käyttöoikeudet&rdquo;.</p>
 
-  <h3>Testiversio ja mainokset</h3>
-  <p>Sovelluksesta on kaksi versiota, ja ne käyttäytyvät eri tavalla:</p>
+  <h3>Mainokset</h3>
+  <p>Peli näyttää mainoksia Googlen mainosverkosta (Google AdMob). Niitä on kahdenlaisia:</p>
   <ul>
-    <li><strong>Julkaistu versio ei näytä mainoksia.</strong> Mainos-SDK on paketissa, mutta sitä ei
-    käynnistetä, se ei pyydä yhtään mainosta eikä se lue mainostunnistetta.</li>
-    <li><strong>Testiversiossa</strong> (Play Consolen testiraide) mainokset ovat päällä ja ne ovat
-    <strong>Googlen testimainoksia</strong>, merkittyinä ruudulla tekstillä &rdquo;Testimainos&rdquo;. Ne
-    eivät tuota tuloja kenellekään, mutta ne ovat oikeita mainospyyntöjä: SDK ottaa yhteyden Googlen
-    mainosverkkoon ja voi lukea laitteen mainostunnisteen.</li>
+    <li><strong>Palkitut mainokset</strong> katsot itse, kun haluat saada jotain, esimerkiksi vihjeen.</li>
+    <li><strong>Tasojen välinen tauko</strong>: silloin tällöin kahden tason välissä on lyhyt mainos, enintään joka viidennen tason jälkeen, ei koskaan kesken pulman eikä päivän ensimmäisellä pelikerralla. Se poistuu itsestään muutamassa sekunnissa, ja sen voi poistaa pysyvästi ostamalla &ldquo;Ei mainoksia&rdquo;.</li>
   </ul>
-  <p>Ennen ensimmäistä mainospyyntöä EU- ja ETA-alueella sekä Isossa-Britanniassa sovellus näyttää Googlen
-  suostumuslomakkeen (UMP). Valinta tallennetaan laitteelle, ja jos et anna suostumusta, mainoksia voidaan
-  yhä näyttää, mutta ei personoituina.</p>
-  <p>Mainos näytetään vain silloin kun pelaaja itse valitsee katsoa yhden saadakseen jotain. Peli ei
-  koskaan keskeytä pulmaa mainoksella, eikä mikään mainos ole ainoa tapa edetä.</p>
+  <p>Mikään mainos ei ole ainoa tapa edetä pelissä.</p>
+  <p><strong>Suostumus.</strong> EU- ja ETA-alueella sekä Isossa-Britanniassa sovellus näyttää ennen ensimmäistä mainospyyntöä Googlen suostumuslomakkeen (UMP). Valintasi tallennetaan laitteelle. Jos et anna suostumusta, mainoksia voidaan yhä näyttää, mutta ei personoituina. Voit muuttaa valintaasi milloin tahansa: <strong>Asetukset → Mainosten tietosuoja-asetukset</strong>.</p>
+  <p><strong>Mitä mainos-SDK kerää.</strong> Googlen oman ilmoituksen mukaan (luettu 25.10.2026) mainos-SDK kerää ja jakaa Googlelle mainontaa, analytiikkaa ja väärinkäytösten estoa varten:</p>
+  <ul>
+    <li>laitteen IP-osoitteen, josta voidaan arvioida likimääräinen sijainti</li>
+    <li>tiedon sovelluksen käytöstä: käynnistys, napautukset ja mainosvideon katselu</li>
+    <li>diagnostiikkaa: käynnistysaika, jumiutumiset ja energiankulutus</li>
+    <li>laitteen tunnisteet: mainostunniste ja app set ID</li>
+  </ul>
+  <p>Tiedot salataan siirron ajaksi (TLS). Mainostunnisteen voi nollata tai poistaa puhelimen asetuksista. Miten Google käsittelee näitä tietoja: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a>.</p>
+  <p><strong>Testiversiot.</strong> Kehitysversioissa ja Play Consolen testiraiteella ennen julkaisua mainokset olivat Googlen testimainoksia, merkittynä ruudulla tekstillä &ldquo;Testimainos&rdquo;. Ne kulkevat saman mainos-SDK:n kautta.</p>
 
   <h3>Lapset</h3>
-  <p>Sovellus on tarkoitettu 13 vuotta täyttäneille. Koska se ei kerää mitään tietoja keneltäkään, se ei
-  kerää niitä lapsiltakaan.</p>
+  <p>Sovellus on tarkoitettu 13 vuotta täyttäneille, eikä sitä ole suunnattu lapsille. Tietoja ei kerätä tietoisesti alle 13-vuotiailta.</p>
 
   <h3>Jos tämä muuttuu</h3>
-  <p>Mainoksia ja sovelluksen sisäisiä ostoja on suunniteltu myöhempään versioon. <strong>Jos ne lisätään,
-  tämä sivu päivitetään ennen kyseisen version julkaisua</strong>, ja Play-kaupan Data safety -tiedot
-  päivitetään samalla. Tällä sivulla lukee aina mitä <em>asennettavissa oleva</em> versio tekee, ei mitä
-  jokin tuleva versio ehkä tekisi.</p>
+  <p>Jos sovellus alkaa kerätä tai lähettää jotain, mitä tällä sivulla ei mainita, <strong>tämä dokumentti päivitetään ennen kyseisen version julkaisua</strong>, ja Play-kaupan Data safety -tiedot päivitetään samalla. Tällä sivulla lukee aina mitä <em>asennettavissa oleva</em> versio tekee, ei mitä jokin tuleva versio ehkä tekisi.</p>
 
   <h3>Yhteystiedot</h3>
   <p>Panu Automation<br>
   <a href="mailto:brainsnacks@panu-automation.com">brainsnacks@panu-automation.com</a></p>
-
   <div lang="en">
     <h2>In English</h2>
 
     <div class="key">
-      <p><strong>Brain Snacks collects nothing about you.</strong> The app sends nothing anywhere. There is
-      no account, no sign-in and no network connection. Everything you do in the game stays on your phone.</p>
+      <p><strong>Brain Snacks shows ads, and Google&rsquo;s advertising SDK collects data for them</strong> (see Ads). The game itself sends nothing anywhere: your progress stays on your phone. There is no account and no sign-in.</p>
     </div>
-
     <h3>What the app stores</h3>
     <p>The app keeps your progress in your phone&rsquo;s own app-private storage:</p>
     <ul>
@@ -159,61 +158,56 @@ WAKE_LOCK, FOREGROUND_SERVICE</pre>
       <li>hint wallet balance, and the medals, colours and decorations you have earned</li>
       <li>your settings: language, colour theme, sound, vibration, numbers in the dots</li>
       <li>an unfinished board, so you can carry on where you left off</li>
+      <li>the order numbers of your purchases, so the same purchase is never paid out twice</li>
     </ul>
-    <p>None of this includes a name, an email address, a location, contacts, or anything else that could
-    identify you. It is numbers about what has happened in a game.</p>
-    <p>The data lives only on your device. Uninstalling the app removes it. You can also clear it yourself
-    at any time: <strong>Settings → Reset progress</strong>.</p>
+    <p>None of this includes a name, an email address, a location, contacts, or anything else that could identify you. It is numbers about what has happened in a game.</p>
+    <p>The data lives only on your device. Uninstalling the app removes it. You can also clear it yourself at any time: <strong>Settings → Reset progress</strong>.</p>
 
-    <h3>What the app does not do</h3>
+    <h3>What the game itself does not do</h3>
     <ul>
-      <li>does not collect or transmit personal data</li>
-      <li>uses no analytics and no tracking</li>
-      <li>shows no advertising in the published build (see below for test builds)</li>
-      <li>contains no in-app purchases</li>
-      <li>shares nothing with third parties, because there is nothing to share</li>
+      <li>does not send your progress or any other game data anywhere</li>
+      <li>uses no analytics or tracking of its own</li>
+      <li>does not ask for a name, an email address or any other contact details</li>
+      <li>does not sell data to anyone</li>
     </ul>
+    <p>For the ads, Google&rsquo;s advertising SDK collects and shares with Google the data described under Ads.</p>
+
+    <h3>In-app purchases</h3>
+    <p>Hint packs can be bought in the game, and so can &ldquo;No more ads&rdquo;, which removes the ads between levels for good. Purchases are handled entirely by <strong>Google Play</strong>: the payment method, card and bank details and the receipt are between you and Google, and the app sees none of them. Play tells the app only which product was bought and its order number. The order number is stored on your phone so that the same purchase is never paid out twice; it is not sent anywhere. Nothing in the game has to be bought: hints can always be earned by playing as well.</p>
+    <p>Purchases are restored from your Google account when you reinstall the game or move to a new phone: <strong>Shop → Restore purchases</strong>. Refunds are handled through Google Play under Google&rsquo;s terms.</p>
 
     <h3>Permissions</h3>
-    <p>The app requests <strong>one</strong> permission: <code>VIBRATE</code>, to vibrate the phone. It is
-    used for nothing but making the board answer under your finger, and you can turn it off:
-    <strong>Settings → Vibration</strong>. Android classes it as a normal permission, so you are not asked
-    for it separately.</p>
-    <p>Beyond that, the app includes Google&rsquo;s advertising SDK, and the SDK adds its own permissions
-    whether or not a given build shows any ads:</p>
+    <p>The app requests <strong>one</strong> permission: <code>VIBRATE</code>, to vibrate the phone. It is used for nothing but making the board answer under your finger, and you can turn it off: <strong>Settings → Vibration</strong>. Android classes it as a normal permission, so you are not asked for it separately.</p>
+    <p>Beyond that, the app includes Google&rsquo;s advertising SDK, which adds its own permissions:</p>
     <pre>INTERNET, ACCESS_NETWORK_STATE, com.google.android.gms.permission.AD_ID,
 ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
 WAKE_LOCK, FOREGROUND_SERVICE</pre>
-    <p>This page used to say the app requested no network access at all. That was true until the
-    advertising SDK was added and is not true any more, which is why it is written out here rather than
-    quietly dropped. You can check the permissions yourself on the app&rsquo;s Play Store page under
-    &ldquo;App permissions&rdquo;.</p>
+    <p>For purchases, Google Play&rsquo;s billing library adds the permission <code>com.android.vending.BILLING</code>, with which the app asks the Play Store to handle a purchase.</p>
+    <p>This page used to say the app requested no network access at all. That was true until the advertising SDK was added and is not true any more, which is why it is written out here rather than quietly dropped. You can check the permissions yourself on the app&rsquo;s Play Store page under &ldquo;App permissions&rdquo;.</p>
 
-    <h3>Test builds and ads</h3>
-    <p>There are two builds of this app and they behave differently:</p>
+    <h3>Ads</h3>
+    <p>The game shows ads from Google&rsquo;s ad network (Google AdMob). There are two kinds:</p>
     <ul>
-      <li><strong>The published build shows no ads.</strong> The SDK is in the package but is never
-      started, never requests an ad and never reads the advertising identifier.</li>
-      <li><strong>The test build</strong> (the Play Console testing track) has ads switched on, and they
-      are <strong>Google&rsquo;s test ads</strong>, labelled &ldquo;Test ad&rdquo; on screen. They earn
-      nobody anything, but they are real ad requests: the SDK contacts Google&rsquo;s ad network and may
-      read the device&rsquo;s advertising identifier.</li>
+      <li><strong>Rewarded ads</strong> are ones you choose to watch to get something, such as a hint.</li>
+      <li><strong>The break between levels</strong>: now and then a short ad sits between two levels, at most after every fifth level, never in the middle of a puzzle and never in your first game of the day. It goes away by itself after a few seconds, and buying &ldquo;No more ads&rdquo; removes it for good.</li>
     </ul>
-    <p>Before the first ad request in the EU, the EEA and the UK, the app shows Google&rsquo;s consent
-    form (UMP). Your answer is stored on the device, and if you do not consent, ads may still be shown but
-    not personalised.</p>
-    <p>An ad is only ever shown when the player chooses to watch one in exchange for something. The game
-    never interrupts a puzzle with an ad, and no ad is ever the only way forward.</p>
+    <p>No ad is ever the only way forward in the game.</p>
+    <p><strong>Consent.</strong> In the EU, the EEA and the UK the app shows Google&rsquo;s consent form (UMP) before the first ad request. Your answer is stored on the device. If you do not consent, ads may still be shown but not personalised. You can change your choice at any time: <strong>Settings → Ad privacy choices</strong>.</p>
+    <p><strong>What the ad SDK collects.</strong> According to Google&rsquo;s own disclosure (read 2026-10-25), the ad SDK collects and shares with Google, for advertising, analytics and fraud prevention:</p>
+    <ul>
+      <li>the device&rsquo;s IP address, from which a general location can be estimated</li>
+      <li>how the app is used: launch, taps and ad video views</li>
+      <li>diagnostics: launch time, hangs and energy use</li>
+      <li>device identifiers: the advertising ID and the app set ID</li>
+    </ul>
+    <p>It is encrypted in transit (TLS). The advertising ID can be reset or deleted in the phone&rsquo;s settings. How Google uses this data: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a>.</p>
+    <p><strong>Test builds.</strong> In development builds and on the Play Console testing track before release, the ads were Google&rsquo;s test ads, labelled &ldquo;Test ad&rdquo; on screen. They go through the same ad SDK.</p>
 
     <h3>Children</h3>
-    <p>The app is intended for ages 13 and over. Since it collects no data from anyone, it collects none
-    from children either.</p>
+    <p>The app is intended for ages 13 and over and is not directed at children. No data is knowingly collected from anyone under 13.</p>
 
     <h3>If this changes</h3>
-    <p>Advertising and in-app purchases are planned for a later version. <strong>If they are added, this
-    page will be updated before that version is published</strong>, and the Play Store Data safety
-    declaration will be updated with it. This page always describes what the version you can install
-    actually does, not what a future version might do.</p>
+    <p>If the app starts collecting or sending anything this page does not mention, <strong>this document will be updated before that version is published</strong>, and the Play Store Data safety declaration will be updated with it. This page always describes what the version you can install actually does, not what a future version might do.</p>
 
     <h3>Contact</h3>
     <p>Panu Automation<br>
