@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRA Workspace for Jira — Guide</title>
+<meta name="description" content="How to use CRA Workspace for Jira: products, Annex I requirements, risks, Article 14 reports and SBOMs.">
+<style>
+  :root {
+    --brand: #0072B2;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5a6470;
+    --line: #e2e6ea;
+    --card: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #e8eaed;
+      --muted: #9aa4b0;
+      --line: #2a2f37;
+      --card: #1b1f25;
+      --brand: #4da3dd;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 0 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 48px 0 96px; }
+  .back { display: inline-block; margin-bottom: 32px; color: var(--muted);
+          text-decoration: none; font-size: 0.92rem; }
+  .back:hover { color: var(--brand); }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 40px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 10px; letter-spacing: -0.01em; }
+  h3 { font-size: 1.02rem; margin: 28px 0 8px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.3em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--brand); overflow-wrap: anywhere; }
+  code { font-size: 0.9em; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+  .table { overflow-x: auto; margin: 0 0 16px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line);
+           color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../">← CRA Workspace for Jira</a>
+
+  <h1>CRA Workspace for Jira</h1>
+  <p class="sub">Guide</p>
+  <p class="meta">
+    Panu Automation · Last updated: 27 October 2026 ·
+    <a href="../">Privacy policy</a> · <a href="../terms/">Terms of use</a>
+  </p>
+
+  <p>CRA Workspace keeps the evidence the EU Cyber Resilience Act asks a manufacturer for, inside Jira. It is a place to record and organise that evidence. It is not legal advice, and it does not report anything to any authority.</p>
+  <h2>Setting up</h2>
+  <p><strong>1. Install</strong> from the Atlassian Marketplace into Jira. If you want to export reports, install it into Confluence on the same site too.</p>
+  <p><strong>2. Decide who may edit.</strong> Everybody with access to Jira can read everything in the app. Changing anything needs the Jira global permission <strong>Edit CRA Workspace</strong>:</p>
+  <p><em>Jira settings &gt; System &gt; Global permissions &gt; Edit CRA Workspace &gt; add a group.</em></p>
+  <p>Jira administrators can always edit, so the app is usable before you have done this.</p>
+  <p><strong>3. Open it</strong> from <em>Apps &gt; CRA Workspace</em>.</p>
+  <h2>Products</h2>
+  <p>Add every product with digital elements that you place on the EU market, one entry per version you support.</p>
+  <ul>
+    <li><strong>Category</strong> is the regulation's class: default, important (class I or II), or critical.</li>
+    <li><strong>Support period ends</strong> is the last day you will handle vulnerabilities for this version. If it is less than five years after the product is placed on the market, the app says so: the regulation expects five years unless the product is expected to be in use for less, and you should be able to show why.</li>
+  </ul>
+  <p>One name and version can be in the register once.</p>
+  <p>Removing a product removes its requirement states and its SBOMs. Its risks and reports are Jira work items and stay in Jira.</p>
+  <h2>Requirements</h2>
+  <p><em>Requirements</em> on a product opens the 22 essential cybersecurity requirements of Annex I, in its two parts. Each is shown with a short title and its citation; the binding text is the regulation's.</p>
+  <p>For each requirement you set:</p>
+  <ul>
+    <li>a <strong>state</strong>: not started, in progress, met, or not applicable;</li>
+    <li>an <strong>owner</strong>;</li>
+    <li><strong>evidence</strong>: a Jira work item key such as <code>SEC-12</code>, or an https address such as a Confluence page.</li>
+  </ul>
+  <p>Three rules are enforced:</p>
+  <ul>
+    <li><strong>Met needs evidence.</strong> At least one link.</li>
+    <li><strong>Not applicable needs a justification</strong>, which should come from your risk assessment.</li>
+    <li><strong>Not applicable is offered only where the regulation allows it</strong>: the lettered items of Part I, point (2). Point (1) and all of Part II apply to every product.</li>
+  </ul>
+  <p>The bar at the top counts met requirements out of the applicable ones.</p>
+  <h2>Risks</h2>
+  <p><em>Risks</em> on a product is its cybersecurity risk assessment.</p>
+  <p><strong>Add risk</strong> creates a Jira work item in the project you pick; its summary is the threat scenario. From then on it is an ordinary work item: assign it, move it through your workflow, link it.</p>
+  <p>You rate each risk by:</p>
+  <ul>
+    <li><strong>Impact</strong> if the scenario happens: negligible, moderate, major, severe.</li>
+    <li><strong>Attack feasibility</strong>, how hard it is to make it happen: very low, low, medium, high.</li>
+  </ul>
+  <p>The two give a <strong>level</strong> from 1 to 5. The matrix shows how many risks sit at each combination.</p>
+  <p>You also choose a <strong>treatment</strong>: avoid, reduce, share, or retain. <strong>Existing work item</strong>: instead of creating a new work item, give the key of one you already have. It keeps its own summary and history and gains the rating. <strong>Remove</strong> takes a risk out of the product's register; the work item stays in Jira with its comments.</p>
+  <p><em>Open in Jira search</em> lists the product's risks in Jira's own search, where you can filter, export and build dashboards from them.</p>
+  <p>A risk you <strong>retain</strong> at level 3 or above needs a <strong>sign-off</strong>: somebody with edit permission presses <em>Sign off</em>, and their name is recorded. Changing the impact, the feasibility or the treatment afterwards removes the sign-off, because what was accepted has changed.</p>
+  <p>Every rating and every sign-off is written on the work item as a comment by the person who made it. That comment is the audit trail.</p>
+  <h3>The risk matrix</h3>
+  <p><strong>Risk matrix</strong> shows which level each impact and attack feasibility gives. Out of the box it is the app's own default table. Somebody with edit permission can change any cell, for the whole site: one table, so that a level means the same in every product. The app refuses a table in which a worse impact or an easier attack would give a lower level, and says which cell to raise. <strong>Restore the default</strong> puts the original table back.</p>
+  <p>Changing the table changes the level of risks without changing their rating, so no comment is written on the work items. Instead every version of the table is kept with who saved it and when, and the dialog lists them. A sign-off records the level it was given at: if the table moves a signed risk to another level, it reads <strong>Signed at another level</strong> and has to be signed off again. The Confluence export prints the table the risks were scored with.</p>
+  <h2>Reports</h2>
+  <p><em>Reports</em> on a product is for the two things Article 14 makes you report: an <strong>actively exploited vulnerability</strong> and a <strong>severe incident</strong>.</p>
+  <p><strong>Open report</strong> the moment you become aware, and enter that moment. It creates a Jira work item and starts the clock. <strong>Existing work item</strong>: if the vulnerability or incident already has a work item &ndash; from a scanner, a support ticket, a risk &ndash; give its key instead. It keeps its own summary and history and gains the clock. A work item that is already a report cannot be opened again, because that would restart its clock:</p>
+  <div class="table"><table><tr><th>Stage</th><th>Due</th></tr><tr><td>Early warning</td><td>24 hours after you became aware</td></tr><tr><td>Notification</td><td>72 hours after you became aware</td></tr><tr><td>Final report, vulnerability</td><td>14 days after a corrective or mitigating measure is available</td></tr><tr><td>Final report, incident</td><td>one month after you submitted the notification</td></tr></table></div>
+  <p>For a vulnerability, press <strong>Measure available</strong> when there is a fix or mitigation; that starts the final report's clock.</p>
+  <p>When you have submitted a stage <strong>on the authorities' own platform</strong>, press <strong>Record</strong> for it and enter when. The app notes whether it was on time. <strong>A stage can be recorded once and not changed.</strong> If you recorded a wrong time, say so in a comment on the work item.</p>
+  <p>The app posts a comment on the work item once before each deadline (6 hours before the early warning, 24 before the notification, 3 days before the final report) and once after a deadline has passed. If you watch the work item, Jira notifies you. Reminders are sent by an hourly job and can be up to an hour late, so do not make them your only alarm.</p>
+  <h2>SBOM</h2>
+  <p><em>SBOM</em> on a product holds its software bills of materials, one per release. Annex I asks you to identify and document the components in your product, including with an SBOM in a commonly used, machine-readable format.</p>
+  <p><strong>Add SBOM</strong>: name the release and paste the document. CycloneDX and SPDX are read, in their JSON form. The document is read in your browser and only the list of components is stored: name, version, package URL and licence. A document that is not one of the two formats, lists no components, or lists more than 20 000 is refused whole.</p>
+  <p><strong>Find a component in every product</strong> answers the question you have on the day a vulnerability in a library is announced: which of our products contain it? Type at least three characters of a name or a package URL. Each product is searched in its newest SBOM.</p>
+  <p>The app does not know whether a component is vulnerable. It is a register, not a scanner.</p>
+  <h2>Exporting</h2>
+  <p><em>Export to Confluence</em>, on the requirement list and on the risk assessment, creates a page in the space you choose with the report as it stands at that moment. Each export is a new page with the time in its title, so earlier ones are kept.</p>
+  <p>Owners and signers appear on the page as mentions, which may notify them.</p>
+  <h2>Uninstalling</h2>
+  <p><strong>Uninstalling deletes the product register and all requirement states, permanently.</strong> Export first. Risks, reports, their comments and exported pages are in your Jira and Confluence and are not touched.</p>
+  <h2>Support</h2>
+  <p>Write to <a href="mailto:info@panu-automation.com">info@panu-automation.com</a>, in English or Finnish. We answer within two working days.</p>
+  <p>Privacy policy: <a href="https://privacy.panu-automation.com/cra-workspace/">https://privacy.panu-automation.com/cra-workspace/</a> &ndash; terms of use: <a href="https://privacy.panu-automation.com/cra-workspace/terms/">https://privacy.panu-automation.com/cra-workspace/terms/</a></p>
+
+  <footer>
+    Panu Automation · <a href="../">Privacy policy</a> · <a href="../terms/">Terms of use</a>
+  </footer>
+</main>
+</body>
+</html>
