@@ -8,6 +8,8 @@ Published with GitHub Pages from the `main` branch, on the domain's own subdomai
 - <https://privacy.panu-automation.com/> — index
 - <https://privacy.panu-automation.com/brainsnacks/> — **Brain Snacks privacy policy**, which is the URL
   in the Play Console listing
+- <https://privacy.panu-automation.com/brainsnacks/terms/> — **Brain Snacks terms of use**, the URL for Play
+  Console's terms field (source: `docs/terms-of-use.md` in the app's own repository)
 
 `privacy.` is a subdomain on purpose. The apex and `www` serve the company's own WordPress site from
 DreamHost, and pointing either of those at GitHub Pages would take that site down. A subdomain is one
