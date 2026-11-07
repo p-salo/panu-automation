@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajopäiväkirja — Tietosuojaseloste</title>
+<meta name="description" content="Ajopäiväkirjan tietosuojaseloste: ajot pysyvät puhelimessa, GPS vain ajon aikana, mainokset ja salattu synkronointi.">
+<style>
+  :root {
+    --brand: #0072B2;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5a6470;
+    --line: #e2e6ea;
+    --card: #f6f8fa;
+    --todo-bg: #fff3bf;
+    --todo-fg: #5c4400;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #e8eaed;
+      --muted: #9aa4b0;
+      --line: #2a2f37;
+      --card: #1b1f25;
+      --brand: #4da3dd;
+      --todo-bg: #4a3b00;
+      --todo-fg: #ffe08a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 0 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 48px 0 96px; }
+  .back { display: inline-block; margin-bottom: 32px; color: var(--muted);
+          text-decoration: none; font-size: 0.92rem; }
+  .back:hover { color: var(--brand); }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 40px; }
+  h2 { font-size: 1.35rem; margin: 56px 0 12px; letter-spacing: -0.01em;
+       padding-top: 28px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.08rem; margin: 32px 0 10px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.3em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--brand); }
+  code { background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+         padding: 1px 5px; font-size: 0.88em; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .key {
+    background: var(--card); border: 1px solid var(--line);
+    border-left: 4px solid var(--brand);
+    border-radius: 10px; padding: 18px 22px; margin: 0 0 32px;
+  }
+  .key p { margin: 0; }
+  mark.todo { background: var(--todo-bg); color: var(--todo-fg); border-radius: 4px; padding: 0 4px; }
+  .draft { background: var(--todo-bg); color: var(--todo-fg); border-radius: 10px;
+           padding: 12px 16px; margin: 0 0 32px; font-size: 0.92rem; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line);
+           color: var(--muted); font-size: 0.9rem; }
+  [lang="en"] h2:first-of-type { border-top: none; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../">← Panu Automation</a>
+
+  <h1>Ajopäiväkirja</h1>
+  <p class="sub">Tietosuojaseloste</p>
+  <p class="meta">
+    Panu Automation · Versio 1 · Voimassa 7.11.2026 alkaen
+    · <a href="ehdot/">Käyttöehdot</a>
+  </p>
+
+  <h2>1. Rekisterinpitäjä</h2>
+  <p>tmi Panu Automation (Panu Salo), Y-tunnus 3022161-3, Kiannonkatu 16 A 64, 02650 Espoo. Yhteydenotot: <a href="mailto:info@panu-automation.com">info@panu-automation.com</a>.</p>
+  <h2>2. Lyhyesti</h2>
+<ul>
+<li><strong>Ajosi ja paikkasi pysyvät puhelimessasi.</strong> Sovellus ei tallenna GPS-jälkeä lainkaan, vain ajon pituuden. Sovelluksessa ei ole käyttäjätiliä.
+</li>
+<li><strong>Sijainti ajon aikana:</strong> sovellus käyttää sijaintia vain tallennettavan ajon aikana, kun ilmoitus "Ajo käynnissä" näkyy, ja vain matkan mittaamiseen. Taustasijaintilupaa ei pyydetä.
+</li>
+<li><strong>Mainokset:</strong> sovellus näyttää Googlen mainoksia ajolistassa ja vuoden yhteenvedossa. Googlen mainoskirjasto kerää niitä varten tietoja (kohta 5). Sijaintiasi ei anneta mainoskirjastolle.
+</li>
+<li><strong>Synkronointi:</strong> jos yhdistät puhelimen Yrityskirjaan tai Kämppäkirjaan, ajot kulkevat salattuina välityspalvelumme kautta. Emme pysty lukemaan niitä (kohta 6).
+</li></ul>
+  <h2>3. Mitä sovellus tallentaa puhelimeesi</h2>
+<ul>
+<li><strong>Ajot:</strong> ajat, lähtö- ja määränpää, reitti, matkamittarin lukemat, kilometrit, GPS-mitattu pituus, tarkoitus, kuljettaja, ajoneuvo, luokka ja asunto sekä korjaushistoria.
+</li>
+<li><strong>Muut tiedot:</strong> paikat, ajoneuvot ja asetukset.
+</li>
+<li><strong>GPS:</strong> sovellus ei tallenna GPS-jälkeä. Sijainnit käsitellään muistissa, ja niistä lasketaan ajon pituus. Ajon aikana puhelimeen pidetään viimeisin sijainti ja tähänastinen matka, jotta mittaus voi jatkua, jos puhelin sulkee sovelluksen. Tieto poistuu, kun ajo päättyy tai hylätään.
+</li>
+<li><strong>Synkronointi:</strong> avain ja tunnus suojattuun tallennustilaan (Android Keystore).
+</li>
+<li><strong>Ostot:</strong> vain tieto siitä, onko mainokseton tilaus voimassa (kyllä tai ei). Ostotunnistetta ei tallenneta.
+</li></ul>
+  <p><strong>Säilytys ja poisto:</strong></p>
+<ul>
+<li>Tiedot ovat sovelluksen omassa tallennustilassa ja poistuvat, kun poistat sovelluksen tai tyhjennät sen tiedot Androidin asetuksista.
+</li>
+<li><strong>Ajon poisto:</strong> ajon voi poistaa. Verohallinnon päätöksen (VH/7370/00.01.00/2020, 4 §) vuoksi poisto on uusi versio: ajo katoaa listasta ja yhteenvedoista, mutta sen historia säilyy.
+</li>
+<li><strong>Poista kaikki tiedot</strong> (Asetukset) poistaa sovelluksen kaikki tiedot puhelimesta ja purkaa parituksen. Lisäksi sovellus pyytää välityspalvelua poistamaan puhelimen ja sen hakemattomat viestit (kohta 6).
+</li>
+<li><strong>Androidin varmuuskopio:</strong> Android voi varmuuskopioida sovelluksen tiedot Google-tilillesi, jos varmuuskopiointi on päällä puhelimessasi. Varmuuskopio on Googlen palvelu omalle tilillesi, emmekä näe sitä. Synkronoinnin avain ei palaudu varmuuskopiosta, joten palautuksen jälkeen puhelin paritetaan uudelleen.
+</li>
+<li><strong>Säilytysaika:</strong> sovellus ei poista vanhoja ajoja itse. Kirjanpitolain säilytysajasta (6 vuotta) huolehdit itse, esimerkiksi arkistoimalla vuoden PDF:n.
+</li></ul>
+  <h2>4. Käyttöoikeudet</h2>
+<ul>
+<li><strong>Sijainti</strong> (<code>ACCESS_FINE_LOCATION</code> ja <code>ACCESS_COARSE_LOCATION</code>, vain sovellusta käytettäessä) ja etualapalvelu (<code>FOREGROUND_SERVICE_LOCATION</code>): GPS mittaa matkan sen ajon ajalta, jonka itse aloitat. Mittaus päättyy, kun lopetat ajon. Sijaintia ei käytetä taustalla, eikä taustasijaintilupaa pyydetä.
+</li>
+<li><strong>Ilmoitukset</strong> (<code>POST_NOTIFICATIONS</code>): ilmoitus "Ajo käynnissä".
+</li>
+<li><strong>Hereillä pito</strong> (<code>WAKE_LOCK</code>): GPS-mittaus ajon aikana ja mainoskirjasto.
+</li>
+<li><strong>Verkko</strong> (<code>INTERNET</code> ja <code>ACCESS_NETWORK_STATE</code>): synkronointi ja mainokset.
+</li>
+<li><strong>Mainos- ja maksukirjastojen omat oikeudet:</strong> <code>AD_ID</code>, <code>ACCESS_ADSERVICES_*</code> ja <code>com.android.vending.BILLING</code>.
+</li>
+<li><strong>Ei kameralupaa:</strong> parituksen QR-koodin lukee Googlen koodinlukija Google Play -palveluissa. Sovellus ei pyydä kameralupaa eikä saa kuvaa.
+</li>
+<li><strong>Ei taustasijaintia, mikrofonia eikä yhteystietoja.</strong>
+</li></ul>
+  <h2>5. Mainokset (Google AdMob)</h2>
+<ol>
+<li><strong>Missä mainoksia näkyy:</strong> sovellus näyttää bannerimainoksia Googlen mainosverkosta ajolistassa ja vuoden yhteenvedossa. <strong>Tallennettavan ajon aikana mainoksia ei näytetä</strong>, eikä koko näytön mainoksia ole.
+</li>
+<li><strong>Suostumus:</strong>
+<ul>
+<li>EU- ja ETA-alueella sekä Isossa-Britanniassa sovellus näyttää ennen ensimmäistä mainospyyntöä Googlen suostumuslomakkeen (UMP).
+</li>
+<li>Ilman suostumusta mainokset ovat ei-personoituja.
+</li>
+<li>Valintaa voi muuttaa: Asetukset → Mainosten tietosuoja-asetukset.
+</li></ul>
+</li>
+<li><strong>Mitä mainoskirjasto kerää:</strong> Googlen oman ilmoituksen mukaan mainoskirjasto kerää ja jakaa Googlelle mainontaa, analytiikkaa ja väärinkäytösten estoa varten:
+<ul>
+<li>IP-osoitteen, josta voidaan arvioida karkea sijainti
+</li>
+<li>tiedon sovelluksen käytöstä
+</li>
+<li>diagnostiikkaa
+</li>
+<li>laitteen tunnisteet: mainostunnisteen ja app set ID:n
+</li></ul>
+</li>
+<li><strong>Sovellus ei anna mainoskirjastolle</strong> GPS-sijaintia, paikkoja eikä ajojen tietoja.
+</li>
+<li><strong>Lisätietoa:</strong> miten Google käsittelee tietoja, kerrotaan osoitteessa <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.
+</li>
+<li><strong>Mainokseton tilaus</strong> (0,49 €/kk) poistaa mainokset: tilaajalle ei pyydetä eikä näytetä mainoksia. Mainoskirjasto on silti mukana sovelluksessa, ja jos tilaus ostetaan kesken käyttökerran, se on jo käynnistetty sillä kerralla.
+</li></ol>
+  <h2>6. Synkronointi Yrityskirjan ja Kämppäkirjan kanssa</h2>
+<ul>
+<li><strong>Milloin synkronointi on käytössä:</strong> vain kun olet yhdistänyt puhelimen tietokoneeseen ja sinulla on Yrityskirjan tai Kämppäkirjan tilaus tai niiden 60 päivän kokeilu käynnissä.
+</li>
+<li><strong>Mitä siirtyy:</strong>
+<ul>
+<li>puhelimesta tietokoneelle ajot (kohdan 3 tiedot ilman GPS-jälkeä)
+</li>
+<li>tietokoneelta puhelimeen paikat, asunnot ja ajoneuvot
+</li></ul>
+</li>
+<li><strong>Salaus:</strong> viestit salataan puhelimessa (XSalsa20-Poly1305) avaimella, joka saadaan tietokoneen QR-koodista. Avain ei koskaan tule palvelimelle.
+</li>
+<li><strong>Mitä palvelin tallentaa:</strong>
+<ul>
+<li>puhelimen tunniste, alusta ja salattu nimi (muotoa "Ajopäiväkirja – &lt;puhelinmalli&gt;")
+</li>
+<li>viimeksi nähty -aika
+</li>
+<li>tunnuksen tiiviste
+</li>
+<li>salatut viestit, kunnes vastaanottajat ovat hakeneet ne, enintään 90 päivää
+</li>
+<li>Lisäksi Cloudflare näkee IP-osoitteen yhteyden aikana.
+</li></ul>
+</li>
+<li><strong>Säilytys ja sijainti:</strong> palvelin on Cloudflare (tiedot EU:ssa). Laite poistetaan 180 päivän käyttämättömyyden jälkeen. Tarkemmin: Yrityskirjan ja Kämppäkirjan tietosuojaseloste, luku 6.
+</li>
+<li><strong>Lopettaminen:</strong> voit poistaa puhelimen synkronoinnista sovelluksen asetuksista (Katkaise yhteys tai Poista kaikki tiedot) tai tietokoneelta. Silloin palvelin poistaa puhelimen ja sen hakemattomat viestit.
+</li></ul>
+  <h2>7. Ostot (Google Play)</h2>
+<ul>
+<li><strong>Google hoitaa ostot:</strong> mainoksettoman tilauksen käsittelee Google Play. Maksutapa ja kuitti ovat Googlen ja sinun välisiä.
+</li>
+<li><strong>Mitä sovellus saa:</strong> tiedon tilauksen tilasta. Puhelimeen tallentuu vain tieto siitä, onko tilaus voimassa.
+</li></ul>
+  <h2>8. Vienti</h2>
+<ul>
+<li><strong>PDF ja CSV:</strong> vienti tehdään vain pyynnöstäsi puhelimessa. Tiedosto jaetaan Androidin jakovalikolla tai tallennetaan Lataukset-kansioon, ja vastaanottajan valitset itse.
+</li>
+<li><strong>Mitä vienti sisältää:</strong> vienti ei sisällä GPS-jälkeä eikä sijainteja, vain ajon kentät ja GPS:n mittaaman matkan pituuden.
+</li></ul>
+  <h2>9. Lapset</h2>
+  <p>Sovellus on tarkoitettu 16 vuotta täyttäneille, eikä sitä ole suunnattu lapsille. Play Consolen kohderyhmät ovat 16–17 ja 18+.</p>
+  <h2>10. Työnantajakäyttö</h2>
+  <p>Sovellus on ajajan oma päiväkirja, ei työnantajan valvontaväline. Ajot eivät mene työnantajalle, ellet itse vie ja lähetä niitä.</p>
+  <h2>11. Oikeutesi</h2>
+<ul>
+<li><strong>Puhelimen tiedot:</strong> hallitset itse sovelluksessa. Voit viedä ne PDF:ksi tai CSV:ksi, poistaa yksittäisen ajon tai poistaa kaikki tiedot (Asetukset → Poista kaikki tiedot). Kaikkien tietojen poisto pyytää myös välityspalvelua poistamaan puhelimesi ja sen hakemattomat viestit.
+</li>
+<li><strong>Palvelimen tiedot:</strong>
+<ul>
+<li>Oikeudet: pääsy tietoihin, oikaisu, poisto, käsittelyn rajoittaminen ja vastustaminen.
+</li>
+<li>Pyynnöt: <a href="mailto:info@panu-automation.com">info@panu-automation.com</a>.
+</li>
+<li>Valitus: tietosuojavaltuutettu (<a href="https://tietosuoja.fi">tietosuoja.fi</a>).
+</li></ul>
+</li></ul>
+  <h2>12. Muutokset</h2>
+  <p>Jos sovellus alkaa kerätä tai lähettää jotain, mitä tässä ei mainita, tämä seloste ja Play-kaupan Data safety -tiedot päivitetään ennen kyseisen version julkaisua.</p>
+
+  <footer>
+    Panu Automation ·
+    <a href="mailto:info@panu-automation.com">info@panu-automation.com</a> ·
+    <a href="ehdot/">Käyttöehdot</a>
+  </footer>
+</main>
+</body>
+</html>
