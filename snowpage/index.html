@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snowpage — Privacy policy</title>
+<meta name="description" content="Snowpage keeps your scans on your phone; no ads, no account.">
+<style>
+  :root {
+    --brand: #0072B2;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5a6470;
+    --line: #e2e6ea;
+    --card: #f6f8fa;
+    --todo-bg: #fff3bf;
+    --todo-fg: #5c4400;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #e8eaed;
+      --muted: #9aa4b0;
+      --line: #2a2f37;
+      --card: #1b1f25;
+      --brand: #4da3dd;
+      --todo-bg: #4a3b00;
+      --todo-fg: #ffe08a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 0 16px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 48px 0 96px; }
+  .back { display: inline-block; margin-bottom: 32px; color: var(--muted);
+          text-decoration: none; font-size: 0.92rem; }
+  .back:hover { color: var(--brand); }
+  h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 40px; }
+  h2 { font-size: 1.35rem; margin: 56px 0 12px; letter-spacing: -0.01em;
+       padding-top: 28px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.08rem; margin: 32px 0 10px; }
+  p, ul { margin: 0 0 16px; }
+  ul { padding-left: 1.3em; }
+  li { margin-bottom: 6px; }
+  a { color: var(--brand); }
+  code { background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+         padding: 1px 5px; font-size: 0.88em; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .key {
+    background: var(--card); border: 1px solid var(--line);
+    border-left: 4px solid var(--brand);
+    border-radius: 10px; padding: 18px 22px; margin: 0 0 32px;
+  }
+  .key p { margin: 0; }
+  mark.todo { background: var(--todo-bg); color: var(--todo-fg); border-radius: 4px; padding: 0 4px; }
+  .draft { background: var(--todo-bg); color: var(--todo-fg); border-radius: 10px;
+           padding: 12px 16px; margin: 0 0 32px; font-size: 0.92rem; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line);
+           color: var(--muted); font-size: 0.9rem; }
+  [lang="en"] h2:first-of-type { border-top: none; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../">← Panu Automation</a>
+
+  <h1>Snowpage</h1>
+  <p class="sub">Privacy policy</p>
+  <p class="meta">
+    Panu Automation · Last updated: 2026-11-07 · Applies to version: 0.5.0
+  </p>
+
+  <div class="key">
+    <p><strong>Your scans stay on your phone.</strong> Snowpage has no account and no server, shows no ads, and sends nothing to us. Google&rsquo;s ML Kit, which does the scanning and the text recognition, sends Google technical diagnostics about its own operation, never your images or their text (see ML Kit below).</p>
+  </div>
+  <h2>What the app stores</h2>
+  <p>On your phone, in the app&rsquo;s own private storage:</p>
+  <ul>
+    <li>your scans: the page pictures, the text recognised in them, their names and dates, and the receipt details you save (seller, date, total, business ID, VAT lines)</li>
+    <li>your settings: the filter you chose last, and whether you own Snowpage Pro</li>
+  </ul>
+  <p>Nothing of this is sent anywhere by the app. Uninstalling the app deletes it, so export what you want to keep first (menu → <strong>Export all scans</strong> makes one backup file).</p>
+
+  <h2>When a file leaves the phone</h2>
+  <p>Only when you share or save one yourself: the app hands the file to the app or folder you pick (Android&rsquo;s share sheet, Downloads, or the folder you choose). Sending a receipt to Kuittikirja works the same way, through the share sheet and your own Google Drive. What happens to the file after that is up to the app or service you chose.</p>
+
+  <h2>Camera and scanning</h2>
+  <p>The scanning screen is Google&rsquo;s ML Kit Document Scanner, which runs inside Google Play services. Snowpage itself has no camera permission and never opens the camera; you can also pick a photo from your gallery inside the scanner. The scanned page comes back to the app as a picture on your phone.</p>
+
+  <h2>ML Kit</h2>
+  <p>The text is recognised on your phone with Google&rsquo;s ML Kit; the recognition model is part of the app and works offline. Neither the picture nor the text is sent anywhere to be read.</p>
+  <p>ML Kit sends Google technical usage and diagnostic data: device and operating system details, the app&rsquo;s name and version, how long recognition took, input sizes, events and error codes, and a per-installation identifier which, according to Google, does not uniquely identify a user or a device. Google uses it for diagnostics and usage statistics, encrypts it in transit, and according to Google does not transfer it to third parties. It contains no picture, no scanned text and no receipt details. Google&rsquo;s own description: <a href="https://developers.google.com/ml-kit/android-data-disclosure">https://developers.google.com/ml-kit/android-data-disclosure</a></p>
+
+  <h2>Snowpage Pro</h2>
+  <p>Snowpage Pro is bought through Google Play, under Google&rsquo;s terms; Google handles the payment. The app only asks Google Play whether Pro is owned, and remembers the answer on the phone. Google Play Console shows us the orders (order number, product, price, country), which we use only for bookkeeping and refunds; card details never reach us.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code>: brought in by ML Kit, for its diagnostics</li>
+    <li><code>com.android.vending.BILLING</code>: Google Play Billing, for Snowpage Pro</li>
+    <li><code>fi.snowpage.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: Android&rsquo;s own, internal to the app</li>
+  </ul>
+  <p>The app asks for no camera, storage, location, contacts or microphone permission.</p>
+
+  <h2>What the app does not do</h2>
+  <ul>
+    <li>does not upload your scans or their text anywhere</li>
+    <li>shows no ads and uses no advertising ID</li>
+    <li>uses no analytics or tracking of its own</li>
+    <li>asks for no name, email address or account</li>
+    <li>does not sell or share data with anyone</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>Snowpage is intended for adults and is not directed at children.</p>
+
+  <h2>If this changes</h2>
+  <p>If the app starts collecting or sending anything this page does not mention, <strong>this page will be updated before that version is released</strong>, and the Play Store&rsquo;s Data safety section with it.</p>
+
+  <h2>Contact</h2>
+  <p>Panu Automation<br>
+  <a href="mailto:snowpage@panu-automation.com">snowpage@panu-automation.com</a></p>
+  <h2>Suomeksi</h2>
+  <p><strong>Skannauksesi pysyvät puhelimessasi.</strong> Snowpagessa ei ole tiliä eikä palvelinta, siinä ei ole mainoksia, eikä se lähetä meille mitään. Skannauksen ja tekstintunnistuksen tekevä Googlen ML Kit lähettää Googlelle teknisiä diagnostiikkatietoja omasta toiminnastaan, ei koskaan kuviasi eikä niiden tekstiä.</p>
+  <ul>
+    <li><strong>Mitä sovellus tallentaa:</strong> skannaukset (sivujen kuvat, tunnistettu teksti, nimet, päivät ja tallentamasi kuitin tiedot) ja asetukset (viimeksi valittu suodatin, onko Snowpage Pro ostettu) puhelimen sovelluskohtaiseen tallennustilaan. Sovelluksen poisto poistaa ne; valikon <strong>Vie kaikki skannaukset</strong> tekee niistä varmuuskopion.</li>
+    <li><strong>Tiedosto lähtee puhelimesta</strong> vain, kun itse jaat tai tallennat sen valitsemaasi sovellukseen tai kansioon. Kuitin lähetys Kuittikirjaan kulkee samoin jakovalikon ja oman Google Drivesi kautta.</li>
+    <li><strong>Kamera:</strong> skannausnäkymä on Googlen ML Kit -asiakirjaskanneri Google Play -palveluissa. Snowpagella ei ole kameran käyttöoikeutta.</li>
+    <li><strong>ML Kit</strong> tunnistaa tekstin puhelimessa; kuvaa tai tekstiä ei lähetetä luettavaksi. Se lähettää Googlelle laitteen ja käyttöjärjestelmän tiedot, sovelluksen nimen ja version, tunnistuksen keston, syötteen koon, tapahtumat ja virhekoodit sekä asennuskohtaisen tunnisteen, joka ei Googlen mukaan yksilöi käyttäjää eikä laitetta. Ne salataan siirron ajaksi. Googlen kuvaus: <a href="https://developers.google.com/ml-kit/android-data-disclosure">https://developers.google.com/ml-kit/android-data-disclosure</a></li>
+    <li><strong>Snowpage Pro</strong> ostetaan Google Playn kautta Googlen ehdoin. Sovellus vain kysyy Google Playlta, onko Pro ostettu. Play Console näyttää meille tilaukset (numero, tuote, hinta, maa), joita käytämme vain kirjanpitoon ja palautuksiin; korttitietoja emme saa.</li>
+    <li><strong>Käyttöoikeudet:</strong> INTERNET ja ACCESS_NETWORK_STATE (ML Kitin diagnostiikka), BILLING (Google Play -ostot) ja Androidin sisäinen oikeus. Ei kameraa, tallennustilaa, sijaintia, yhteystietoja eikä mikrofonia.</li>
+    <li><strong>Sovellus ei</strong> lähetä skannauksia minnekään, näytä mainoksia, käytä omaa analytiikkaa, pyydä nimeä, sähköpostia eikä tiliä, eikä myy tai jaa tietoja kenellekään.</li>
+    <li>Sovellus on tarkoitettu aikuisille. Jos jokin tästä muuttuu, seloste päivitetään ennen sen version julkaisua.</li>
+  </ul>
+
+  <footer>
+    Panu Automation ·
+    <a href="mailto:snowpage@panu-automation.com">snowpage@panu-automation.com</a>
+  </footer>
+</main>
+</body>
+</html>
