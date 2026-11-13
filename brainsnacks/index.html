@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brain Snacks — tietosuojakäytäntö / Privacy policy</title>
-<meta name="description" content="Brain Snacks ei kerää käyttäjistään mitään. Brain Snacks collects nothing about its users.">
+<meta name="description" content="Brain Snacks: mainokset, ostot, käyttötilastot ja virheraportit. Brain Snacks: ads, purchases, usage statistics and crash reports.">
 <style>
   :root {
     --brand: #0072B2;
@@ -75,12 +75,12 @@
   <h1>Brain Snacks</h1>
   <p class="sub">Tietosuojakäytäntö · <span lang="en">Privacy policy</span></p>
   <p class="meta">
-    Panu Automation · Päivitetty / Last updated: 26.10.2026
-    · Koskee versiota / Applies to version: 1.0.0
+    Panu Automation · Päivitetty / Last updated: 13.11.2026
+    · Koskee versiota / Applies to version: 1.3.0
   </p>
 
   <div class="key">
-    <p><strong>Brain Snacks näyttää mainoksia, ja Googlen mainos-SDK kerää niitä varten tietoja</strong> (kohta Mainokset). Peli itse ei lähetä mitään minnekään: edistymisesi pysyy puhelimessasi. Sovelluksessa ei ole käyttäjätiliä eikä kirjautumista.</p>
+    <p><strong>Brain Snacks näyttää mainoksia, ja Googlen mainos-SDK kerää niitä varten tietoja</strong> (kohta Mainokset). Jos annat suostumuksen, peli lähettää lisäksi käyttötilastoja ja virheraportteja Googlen Firebaseen (kohta Käyttötilastot ja virheraportit). Edistymisesi pysyy puhelimessasi. Sovelluksessa ei ole käyttäjätiliä eikä kirjautumista.</p>
   </div>
   <h2>Mitä sovellus tallentaa</h2>
   <p>Sovellus tallentaa edistymisesi puhelimesi omaan, sovelluskohtaiseen tallennustilaan:</p>
@@ -97,12 +97,11 @@
 
   <h3>Mitä peli itse ei tee</h3>
   <ul>
-    <li>ei lähetä edistymistäsi eikä muita pelin tietoja minnekään</li>
-    <li>ei käytä omaa analytiikkaa eikä seurantaa</li>
+    <li>ei lähetä edistymistäsi minnekään</li>
     <li>ei kysy nimeä, sähköpostiosoitetta eikä muita yhteystietoja</li>
     <li>ei myy tietoja kenellekään</li>
   </ul>
-  <p>Mainoksia varten Googlen mainos-SDK kerää ja jakaa Googlelle tietoja, jotka on kerrottu kohdassa Mainokset.</p>
+  <p>Mainoksia varten Googlen mainos-SDK kerää ja jakaa Googlelle tietoja, jotka on kerrottu kohdassa Mainokset. Käyttötilastot ja virheraportit on kerrottu omassa kohdassaan.</p>
 
   <h3>Sovelluksen sisäiset ostot</h3>
   <p>Pelissä voi ostaa vihjepaketteja sekä &ldquo;Ei mainoksia&rdquo; -oston, joka poistaa tasojen väliset mainokset pysyvästi. Ostot käsittelee kokonaan <strong>Google Play</strong>: maksutapa, kortti- ja pankkitiedot ja kuitti ovat Googlen ja sinun välisiä, eikä sovellus näe niistä mitään. Play kertoo sovellukselle vain, mitä tuotetta ostettiin, ja tilausnumeron. Tilausnumero tallennetaan puhelimeesi, jotta samaa ostoa ei makseta kahdesti; sitä ei lähetetä minnekään. Mitään pelissä ei tarvitse ostaa: vihjeet voi aina myös ansaita pelaamalla.</p>
@@ -115,6 +114,7 @@
 ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
 WAKE_LOCK, FOREGROUND_SERVICE</pre>
   <p>Ostoja varten Google Playn maksukirjasto tuo käyttöoikeuden <code>com.android.vending.BILLING</code>, jolla sovellus pyytää Play Kauppaa käsittelemään oston.</p>
+  <p>Käyttötilastoja varten Firebase tuo käyttöoikeuden <code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>, jolla se kysyy Play Kaupalta, mistä asennus tuli (esimerkiksi hausta tai mainoksesta).</p>
   <p>Tämä sivu sanoi aiemmin, ettei sovellus pyydä verkko-oikeutta lainkaan. Se piti paikkansa siihen asti kun mainos-SDK lisättiin, eikä pidä enää, ja siksi se on kirjoitettu tähän näin suoraan. Käyttöoikeudet voi tarkistaa itse Play-kaupan sovellussivulta kohdasta &ldquo;Sovelluksen käyttöoikeudet&rdquo;.</p>
 
   <h3>Mainokset</h3>
@@ -135,6 +135,21 @@ WAKE_LOCK, FOREGROUND_SERVICE</pre>
   <p>Tiedot salataan siirron ajaksi (TLS). Mainostunnisteen voi nollata tai poistaa puhelimen asetuksista. Miten Google käsittelee näitä tietoja: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a>.</p>
   <p><strong>Testiversiot.</strong> Kehitysversioissa ja Play Consolen testiraiteella ennen julkaisua mainokset olivat Googlen testimainoksia, merkittynä ruudulla tekstillä &ldquo;Testimainos&rdquo;. Ne kulkevat saman mainos-SDK:n kautta.</p>
 
+  <h3>Käyttötilastot ja virheraportit</h3>
+  <p>Versiosta 1.3.0 alkaen peli käyttää Googlen <strong>Firebase Analyticsia</strong> ja <strong>Firebase Crashlyticsia</strong>, jotta tiedämme, mitkä pelit ja tasot toimivat ja missä peli kaatuu.</p>
+  <p><strong>Suostumus.</strong> EU:ssa, ETA:ssa ja Isossa-Britanniassa mitään ei lähetetä ennen kuin olet vastannut Googlen suostumuslomakkeeseen (sama, joka kysytään mainoksia varten), ja silloinkin vain, jos annoit suostumuksen tietojen tallentamiseen laitteelle, sisällön toimivuuden mittaamiseen ja Googlelle toimittajana. Voit perua sen milloin tahansa: <strong>Asetukset → Mainosten tietosuoja-asetukset</strong>. Lähettäminen loppuu heti. Muualla käyttötilastot ja virheraportit ovat käytössä ilman erillistä kysymystä.</p>
+  <p><strong>Mitä lähetetään:</strong></p>
+  <ul>
+    <li>pelin tapahtumat: ratkaistu taso (peli, taso, vaikeus, aika, tähdet), harjoituspeli, vihjeen käyttö ja vihjeiden loppuminen, tarjouksen näyttö ja valinta, palkinnot, teemojen kokeilu, päivän pulma ja putki</li>
+    <li>ostot: tuote ja hinta, ei maksutietoja</li>
+    <li>Firebasen automaattiset tapahtumat: ensimmäinen avaus, istunnon alku ja kesto, näkymät ja sovelluksen päivitys</li>
+    <li>virheraportit: virheen teksti ja ohjelmakoodin kohta, jossa se tapahtui, puhelimen malli ja Android-versio</li>
+    <li>Firebasen oma, asennuskohtainen satunnainen tunniste. <strong>Mainostunnistetta ei kerätä tätä kautta.</strong></li>
+    <li>karkea sijainti (maa ja alue), jonka Firebase päättelee yhteyden IP-osoitteesta. IP-osoitetta itseään ei tallenneta.</li>
+  </ul>
+  <p><strong>Mitä ei lähetetä:</strong> nimeä, sähköpostia, tarkkaa sijaintia, yhteystietoja eikä pulmien sisältöä. Googlen signaalit ja mainonnan personointi ovat tässä pois päältä.</p>
+  <p>Tiedot salataan siirron ajaksi (TLS). Google käsittelee niitä palveluntarjoajanamme, ja käyttötilastoja säilytetään kaksi kuukautta. Miten Google käsittelee Firebasen tietoja: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>.</p>
+
   <h3>Lapset</h3>
   <p>Sovellus on tarkoitettu 13 vuotta täyttäneille, eikä sitä ole suunnattu lapsille. Tietoja ei kerätä tietoisesti alle 13-vuotiailta.</p>
 
@@ -148,7 +163,7 @@ WAKE_LOCK, FOREGROUND_SERVICE</pre>
     <h2>In English</h2>
 
     <div class="key">
-      <p><strong>Brain Snacks shows ads, and Google&rsquo;s advertising SDK collects data for them</strong> (see Ads). The game itself sends nothing anywhere: your progress stays on your phone. There is no account and no sign-in.</p>
+      <p><strong>Brain Snacks shows ads, and Google&rsquo;s advertising SDK collects data for them</strong> (see Ads). If you consent, the game also sends usage statistics and crash reports to Google&rsquo;s Firebase (see Usage statistics and crash reports). Your progress stays on your phone. There is no account and no sign-in.</p>
     </div>
     <h3>What the app stores</h3>
     <p>The app keeps your progress in your phone&rsquo;s own app-private storage:</p>
@@ -165,12 +180,11 @@ WAKE_LOCK, FOREGROUND_SERVICE</pre>
 
     <h3>What the game itself does not do</h3>
     <ul>
-      <li>does not send your progress or any other game data anywhere</li>
-      <li>uses no analytics or tracking of its own</li>
+      <li>does not send your progress anywhere</li>
       <li>does not ask for a name, an email address or any other contact details</li>
       <li>does not sell data to anyone</li>
     </ul>
-    <p>For the ads, Google&rsquo;s advertising SDK collects and shares with Google the data described under Ads.</p>
+    <p>For the ads, Google&rsquo;s advertising SDK collects and shares with Google the data described under Ads. Usage statistics and crash reports have a section of their own.</p>
 
     <h3>In-app purchases</h3>
     <p>Hint packs can be bought in the game, and so can &ldquo;No more ads&rdquo;, which removes the ads between levels for good. Purchases are handled entirely by <strong>Google Play</strong>: the payment method, card and bank details and the receipt are between you and Google, and the app sees none of them. Play tells the app only which product was bought and its order number. The order number is stored on your phone so that the same purchase is never paid out twice; it is not sent anywhere. Nothing in the game has to be bought: hints can always be earned by playing as well.</p>
@@ -183,6 +197,7 @@ WAKE_LOCK, FOREGROUND_SERVICE</pre>
 ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
 WAKE_LOCK, FOREGROUND_SERVICE</pre>
     <p>For purchases, Google Play&rsquo;s billing library adds the permission <code>com.android.vending.BILLING</code>, with which the app asks the Play Store to handle a purchase.</p>
+    <p>For usage statistics, Firebase adds the permission <code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code>, with which it asks the Play Store where the install came from (a search or an ad, for example).</p>
     <p>This page used to say the app requested no network access at all. That was true until the advertising SDK was added and is not true any more, which is why it is written out here rather than quietly dropped. You can check the permissions yourself on the app&rsquo;s Play Store page under &ldquo;App permissions&rdquo;.</p>
 
     <h3>Ads</h3>
@@ -202,6 +217,21 @@ WAKE_LOCK, FOREGROUND_SERVICE</pre>
     </ul>
     <p>It is encrypted in transit (TLS). The advertising ID can be reset or deleted in the phone&rsquo;s settings. How Google uses this data: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a>.</p>
     <p><strong>Test builds.</strong> In development builds and on the Play Console testing track before release, the ads were Google&rsquo;s test ads, labelled &ldquo;Test ad&rdquo; on screen. They go through the same ad SDK.</p>
+
+    <h3>Usage statistics and crash reports</h3>
+    <p>From version 1.3.0 the game uses Google&rsquo;s <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>, so that we know which games and levels work and where the game crashes.</p>
+    <p><strong>Consent.</strong> In the EU, the EEA and the UK nothing is sent until you have answered Google&rsquo;s consent form (the same one asked for the ads), and then only if you consented to storing information on the device, measuring content performance and Google as a vendor. You can withdraw it at any time: <strong>Settings → Ad privacy choices</strong>. Sending stops at once. Elsewhere usage statistics and crash reports are on without a separate question.</p>
+    <p><strong>What is sent:</strong></p>
+    <ul>
+      <li>game events: a level solved (game, level, difficulty, time, stars), a practice game, a hint used and the hints running out, an offer shown and chosen, rewards, trying a theme, the daily puzzle and the streak</li>
+      <li>purchases: the product and its price, no payment details</li>
+      <li>Firebase&rsquo;s automatic events: first open, session start and length, screen views and app updates</li>
+      <li>crash reports: the error text and the place in the code where it happened, the phone model and Android version</li>
+      <li>Firebase&rsquo;s own random identifier for the installation. <strong>The advertising ID is not collected this way.</strong></li>
+      <li>a coarse location (country and region), which Firebase derives from the connection&rsquo;s IP address. The IP address itself is not stored.</li>
+    </ul>
+    <p><strong>What is not sent:</strong> your name, e-mail, precise location, contacts or the contents of the puzzles. Google signals and ad personalisation are off for this.</p>
+    <p>The data is encrypted in transit (TLS). Google processes it as our service provider, and usage statistics are kept for two months. How Google handles Firebase data: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a>.</p>
 
     <h3>Children</h3>
     <p>The app is intended for ages 13 and over and is not directed at children. No data is knowingly collected from anyone under 13.</p>
