@@ -75,11 +75,11 @@
   <h1>Night Plow</h1>
   <p class="sub">Privacy policy</p>
   <p class="meta">
-    Panu Automation · Last updated: 2026-11-06 · Applies to version: 1.0
+    Panu Automation · Last updated: 2026-11-20 · Applies to version: 1.2
   </p>
 
   <div class="key">
-    <p><strong>Night Plow shows ads, and Google&rsquo;s advertising SDK collects data for them</strong> (see Ads). The game itself sends nothing anywhere: your progress stays on your phone. There is no account and no sign-in.</p>
+    <p><strong>Night Plow shows ads, and Google&rsquo;s advertising SDK collects data for them</strong> (see Ads). <strong>With your consent the game also sends anonymous gameplay statistics to GameAnalytics</strong> (see Gameplay statistics). If you use Google Play Games, your achievements are also kept in your Play Games profile (see Google Play Games). Your progress itself stays on your phone. The game has no account of its own.</p>
   </div>
   <h2>What the app stores</h2>
   <p>The app keeps your progress in your phone&rsquo;s own app-private storage:</p>
@@ -88,30 +88,50 @@
     <li>your best stars and scores for each place</li>
     <li>your settings: difficulty, sound, camera and whether the tips have been shown</li>
     <li>which radio lines the dispatcher has already said, so she does not repeat herself</li>
+    <li>your contracts, achievements and the days you have played in a row, and the day you last took the daily reward</li>
+    <li>whether you have been asked about the evening reminder</li>
   </ul>
   <p>None of this includes a name, an email address, a location, contacts or anything else that could identify you. The data lives only on your device, and uninstalling the app removes it.</p>
 
   <h2>What the game itself does not do</h2>
   <ul>
-    <li>does not send your progress or any other game data anywhere</li>
-    <li>uses no analytics or tracking of its own</li>
+    <li>does not send your saved progress anywhere</li>
     <li>does not ask for a name, an email address or any other contact details</li>
+    <li>does not read your contacts, photos, files or precise location</li>
     <li>does not sell data to anyone</li>
   </ul>
   <p>For the ads, Google&rsquo;s advertising SDK collects and shares with Google the data described under Ads.</p>
 
+  <h2>Gameplay statistics (GameAnalytics)</h2>
+  <p>To learn where the game is too hard, too easy or confusing, the game sends gameplay statistics to <strong>GameAnalytics</strong> (GameAnalytics ApS, Denmark), which processes them for us. <strong>Only in the app from Google Play, and only when your answer to the consent form (see Ads) allows it</strong>; otherwise nothing is sent.</p>
+  <p>What is sent:</p>
+  <ul>
+    <li>game events: a night started and finished (the night&rsquo;s number, the kind of place, stars, points, pay), purchases with the game&rsquo;s own money, ads shown and their outcome, achievements, contracts, the day streak, the tips, the daily reward, and whether the reminder was allowed</li>
+    <li>a random identifier the analytics library creates on your phone, and a session identifier</li>
+    <li>the device&rsquo;s model and manufacturer, the Android version, the app&rsquo;s version and the network type</li>
+    <li>the time of each event; GameAnalytics derives your country from the connection&rsquo;s IP address</li>
+  </ul>
+  <p>It contains no name, email, advertising ID or precise location. It is encrypted in transit (TLS) and used only for statistics about the game. GameAnalytics&rsquo; privacy policy: <a href="https://gameanalytics.com/privacy">https://gameanalytics.com/privacy</a>. Turning the consent off (<strong>Pause menu → Privacy options</strong>) stops it.</p>
+
+  <h2>Evening reminder</h2>
+  <p>After your second night the app may ask whether it may remind you in the evening that fresh snow has fallen. If you allow it, the phone shows one notification the next evening. The reminder is set on the phone itself; nothing is sent anywhere. You can turn it off in the phone&rsquo;s notification settings.</p>
+
+  <h2>Google Play Games</h2>
+  <p>The game&rsquo;s achievements are also unlocked in <strong>Google Play Games</strong> when you are signed in there (Google signs you in when the game starts, and you can decline). Google keeps them in your Play Games profile under Google&rsquo;s own privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>. The game does not read your Play Games profile; it only tells Google which achievement you earned and opens Google&rsquo;s list of them.</p>
+
   <h2>Permissions</h2>
-  <p>The game itself asks for no permissions. Google&rsquo;s advertising SDK adds its own:</p>
+  <p>The game itself asks for one permission: <strong>notifications</strong> (<code>POST_NOTIFICATIONS</code>, the evening reminder; Android asks you first). The rest come from Google&rsquo;s advertising and Play Games libraries:</p>
   <pre>INTERNET, ACCESS_NETWORK_STATE, com.google.android.gms.permission.AD_ID,
 ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS,
-WAKE_LOCK, FOREGROUND_SERVICE</pre>
-  <p>The game plays offline; the network is used for the ads only. You can check the permissions yourself on the app&rsquo;s Play Store page under &ldquo;App permissions&rdquo;.</p>
+WAKE_LOCK, FOREGROUND_SERVICE, RECEIVE_BOOT_COMPLETED</pre>
+  <p>(<code>RECEIVE_BOOT_COMPLETED</code> keeps the evening reminder set after the phone restarts. Read off the 1.2 build with <code>aapt dump permissions</code>, 20.11.2026.)</p>
+  <p>The game plays offline; the network is used for the ads, the gameplay statistics and Google Play Games. You can check the permissions yourself on the app&rsquo;s Play Store page under &ldquo;App permissions&rdquo;.</p>
 
   <h2>Ads</h2>
   <p>The game shows ads from Google&rsquo;s ad network (Google AdMob). There are two kinds:</p>
   <ul>
-    <li><strong>A rewarded ad</strong> you choose to watch after a night, to double that night&rsquo;s pay. Closing it early costs nothing.</li>
-    <li><strong>A break between nights</strong>: now and then a full-screen ad when you start the next night from the garage, at most once every three minutes, never after your first night, never while you drive.</li>
+    <li><strong>Rewarded ads</strong> you choose to watch: after a night, to double that night&rsquo;s pay, and once a day in the garage for the daily reward. Closing one early costs nothing.</li>
+    <li><strong>A break between nights</strong>: now and then a full-screen ad when you start the next night from the garage, at most once every three minutes, never before your third night, never while you drive.</li>
   </ul>
   <p>No ad is ever the only way forward in the game.</p>
   <p><strong>Consent.</strong> In the EU, the EEA and the UK the app shows Google&rsquo;s consent form (UMP) before the first ad request. Your answer is stored on the device. If you do not consent, ads may still be shown but not personalised. You can change your choice at any time: <strong>Pause menu → Privacy options</strong>.</p>
