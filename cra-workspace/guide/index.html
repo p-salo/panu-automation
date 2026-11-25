@@ -68,7 +68,9 @@
 
   <p>CRA Compliance keeps the evidence the EU Cyber Resilience Act asks a manufacturer for, inside Jira. It is a place to record and organise that evidence. It is not legal advice, and it does not report anything to any authority.</p>
   <h2>Setting up</h2>
-  <p><strong>1. Install</strong> from the Atlassian Marketplace into Jira. If you want to export reports to Confluence, a site admin then connects the app to Confluence on the same site, in <em>Atlassian Administration &gt; Apps</em>. It is the same installation: nothing is bought twice.</p>
+  <p><strong>1. Install</strong> from the Atlassian Marketplace into Jira. The app needs only Jira; Confluence is optional and only the export uses it. To export reports to Confluence on the same site, a site admin connects the app to it once:</p>
+  <p><em>Atlassian Administration (admin.atlassian.com) &gt; Apps &gt; Sites &gt; your site &gt; Connected apps &gt; CRA Compliance &gt; View app details &gt; Connections &gt; Confluence &gt; Connect.</em></p>
+  <p>It is the same installation: nothing is bought twice. Until it is connected, the app works the same without the <em>Export to Confluence</em> button.</p>
   <p><strong>2. Decide who may edit.</strong> Everybody with access to Jira can read everything in the app. Changing anything needs the Jira global permission <strong>Edit CRA Compliance</strong>:</p>
   <p><em>Jira settings &gt; System &gt; Global permissions &gt; Edit CRA Compliance &gt; add a group.</em></p>
   <p>Jira administrators can always edit, so the app is usable before you have done this.</p>
