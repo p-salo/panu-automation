@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CRA Workspace for Jira — Guide</title>
-<meta name="description" content="How to use CRA Workspace for Jira: products, Annex I requirements, risks, Article 14 reports and SBOMs.">
+<title>CRA Compliance for Jira — Guide</title>
+<meta name="description" content="How to use CRA Compliance for Jira: products, Annex I requirements, risks, Article 14 reports and SBOMs.">
 <style>
   :root {
     --brand: #0072B2;
@@ -57,22 +57,22 @@
 </head>
 <body>
 <main>
-  <a class="back" href="../">← CRA Workspace for Jira</a>
+  <a class="back" href="../">← CRA Compliance for Jira</a>
 
-  <h1>CRA Workspace for Jira</h1>
+  <h1>CRA Compliance for Jira</h1>
   <p class="sub">Guide</p>
   <p class="meta">
     Panu Automation · Last updated: 10 November 2026 ·
     <a href="../">Privacy policy</a> · <a href="../terms/">Terms of use</a>
   </p>
 
-  <p>CRA Workspace keeps the evidence the EU Cyber Resilience Act asks a manufacturer for, inside Jira. It is a place to record and organise that evidence. It is not legal advice, and it does not report anything to any authority.</p>
+  <p>CRA Compliance keeps the evidence the EU Cyber Resilience Act asks a manufacturer for, inside Jira. It is a place to record and organise that evidence. It is not legal advice, and it does not report anything to any authority.</p>
   <h2>Setting up</h2>
-  <p><strong>1. Install</strong> from the Atlassian Marketplace into Jira. If you want to export reports, install it into Confluence on the same site too.</p>
-  <p><strong>2. Decide who may edit.</strong> Everybody with access to Jira can read everything in the app. Changing anything needs the Jira global permission <strong>Edit CRA Workspace</strong>:</p>
-  <p><em>Jira settings &gt; System &gt; Global permissions &gt; Edit CRA Workspace &gt; add a group.</em></p>
+  <p><strong>1. Install</strong> from the Atlassian Marketplace into Jira. If you want to export reports to Confluence, a site admin then connects the app to Confluence on the same site, in <em>Atlassian Administration &gt; Apps</em>. It is the same installation: nothing is bought twice.</p>
+  <p><strong>2. Decide who may edit.</strong> Everybody with access to Jira can read everything in the app. Changing anything needs the Jira global permission <strong>Edit CRA Compliance</strong>:</p>
+  <p><em>Jira settings &gt; System &gt; Global permissions &gt; Edit CRA Compliance &gt; add a group.</em></p>
   <p>Jira administrators can always edit, so the app is usable before you have done this.</p>
-  <p><strong>3. Open it</strong> from <em>Apps &gt; CRA Workspace</em>.</p>
+  <p><strong>3. Open it</strong> from <em>Apps &gt; CRA Compliance</em>.</p>
   <h2>Products</h2>
   <p>Add every product with digital elements that you place on the EU market, one entry per version you support.</p>
   <ul>
@@ -125,7 +125,7 @@
   <p><strong>Find a component in every product</strong> answers the question you have on the day a vulnerability in a library is announced: which of our products contain it? Type at least three characters of a name or a package URL. Each product is searched in its newest SBOM.</p>
   <p>The app does not know whether a component is vulnerable. It is a register, not a scanner.</p>
   <h2>Exporting</h2>
-  <p><em>Export to Confluence</em>, on the requirement list and on the risk assessment, creates a page in the space you choose with the report as it stands at that moment. Each export is a new page with the time in its title, so earlier ones are kept.</p>
+  <p><em>Export to Confluence</em>, on the requirement list and on the risk assessment, creates a page in the space you choose with the report as it stands at that moment. Each export is a new page with the time in its title, so earlier ones are kept. The button is there only when the site has Confluence and the app is connected to it (step 1); on a Jira-only site the app works the same without it.</p>
   <p>Owners and signers appear on the page as mentions, which may notify them.</p>
   <h2>Uninstalling</h2>
   <p><strong>Uninstalling deletes the product register and all requirement states, permanently.</strong> Export first. Risks, reports, their comments and exported pages are in your Jira and Confluence and are not touched.</p>
